@@ -1,0 +1,20 @@
+While building apk I was getting a lot of errors in main.dart file just because I wrote WidgetsFlutterBinding.ensureInitialized() below the await Firebase intializeApp() . So , this small things can also affect your app drastically.
+
+New Concepts I learnt from this clone :
+1. SafeArea() : it is used just to avoid anything going out of screen because of change of the device . So this is used to keep some spacing on the screen which is called as SafeArea.
+
+2. SvgPicture : 
+
+3. Flexible Widget : Flexible widget is used when we want our some container to change it's positions as soon as some new widget is added on the same screen.
+Here we used it for instagram so when we add any another widget now Instagram will automatically shift upwards.
+it has parameter flex which takes value to adjust the position.
+
+4. dispose : Dispose is used to remove the controller just after completing the current textField e.g. the _emailController will get disposed as soon as we complete that field.
+
+5. pushReplacement : it is used when we want to replace our screen with other screen and not to push our pointer on some other screen . So , there's no any back option when you use pushReplacement for particular screen.
+
+6. toJson : 
+
+7. Document Snapshot : 
+
+8. 
