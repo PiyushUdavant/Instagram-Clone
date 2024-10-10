@@ -1,7 +1,3 @@
-// ignore_for_file: unused_import, prefer_const_constructors, sort_child_properties_last, unused_local_variable
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/providers/user_provider.dart';
@@ -72,17 +68,10 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     return Scaffold(
       body: Center(
         child: PageView(
-          children: homeScreenItems,
-          // children:[
-          //   Text('Home'),
-          //   Text('Search Here'),
-          //   Text('Add Post'),
-          //   Text('Favourites'),
-          //   Text('Profile')
-          // ],
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           onPageChanged: onPageChanged,
+          children: homeScreenItems,
         ),
       ),
       // body: Center(child:Text('This is mobile')) 

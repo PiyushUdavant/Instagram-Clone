@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import'package:flutter/material.dart';
 import 'package:instagram_clone/models/user.dart';
@@ -33,7 +31,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
     final User? user = Provider.of<UserProvider>(context).getUser;
 
     if(user == null){
-      return Center(
+      return const Center(
         child: CircularProgressIndicator(color: Colors.white),
       );
     }
@@ -66,7 +64,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
             return Center(child: Text('Error: ${snapshot.error}'));
           }
           if (!snapshot.hasData || snapshot.data == null) {
-            return Center(child: Text('No data available'));
+            return const Center(child: Text('No data available'));
           }
           return ListView.builder(
             // itemCount: (snapshot.data! as dynamic).docs.length,
@@ -122,11 +120,11 @@ class _CommentsScreenState extends State<CommentsScreen> {
                   });
                 },
                 child: Container(               
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 8,
                     vertical: 8,
                   ),
-                  child: Text(
+                  child: const Text(
                     'Post',
                     style: TextStyle(
                       color:blueColor,

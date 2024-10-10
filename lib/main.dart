@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors,unused_import 
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -8,12 +6,10 @@ import 'package:instagram_clone/providers/user_provider.dart';
 import 'package:instagram_clone/responsive/mobile_screen_layout.dart';
 import 'package:instagram_clone/responsive/responsive_layout_screen.dart';
 import 'package:instagram_clone/responsive/web_screen_layout.dart';
-import 'package:instagram_clone/screens/comments_screen.dart';
 // import 'package:instagram_clone/responsive/mobile_screen_layout.dart';
 // import 'package:instagram_clone/responsive/responsive_layout_screen.dart';
 // import 'package:instagram_clone/responsive/web_screen_layout.dart';
 import 'package:instagram_clone/screens/login_screen.dart';
-import 'package:instagram_clone/screens/signup_screen.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +30,7 @@ void main() async{
   else{ // For the mobile version of the App
     await Firebase.initializeApp();  
   }  
-  runApp( MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -80,11 +76,11 @@ class MyApp extends StatelessWidget {
                 }
               }
               if(snapshot.connectionState == ConnectionState.waiting){
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
-              return LoginScreen();
+              return const LoginScreen();
             },
           )
           ),

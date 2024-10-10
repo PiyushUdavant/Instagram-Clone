@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_constructors,unused_import
-
 import 'dart:typed_data';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
@@ -69,7 +66,7 @@ class _SignupScreenState extends State<SignupScreen> {
     else{
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) =>  ResponsiveLayout(
+          builder: (context) =>  const ResponsiveLayout(
             mobileScreenLayout: MobileScreenLayout(), 
             webScreenLayout: WebScreenLayout(),
           )
@@ -81,7 +78,7 @@ class _SignupScreenState extends State<SignupScreen> {
   void navigateToSignUp() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => SignupScreen()
+        builder: (context) => const SignupScreen()
       )
     );
   }
@@ -114,7 +111,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     radius: 64,
                     backgroundImage:MemoryImage(_image!)
                   ) :
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius :64,
                     backgroundImage: CachedNetworkImageProvider('https://t4.ftcdn.net/jpg/05/49/98/39/240_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg',
                     ),
@@ -176,7 +173,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Container(
                   // ignore: sort_child_properties_last
                   child:_isLoading?
-                  Center(
+                  const Center(
                     child:CircularProgressIndicator(
                       color: primaryColor,
                     ),

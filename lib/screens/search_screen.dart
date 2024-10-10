@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -110,10 +108,10 @@ class _SearchScreenState extends State<SearchScreen> {
             crossAxisSpacing: 4,
             repeatPattern: QuiltedGridRepeatPattern.inverted,
             pattern: [
-              QuiltedGridTile(2, 2),
-              QuiltedGridTile(1, 1),
-              QuiltedGridTile(1, 1),
-              QuiltedGridTile(1, 2),
+              const QuiltedGridTile(2, 2),
+              const QuiltedGridTile(1, 1),
+              const QuiltedGridTile(1, 1),
+              const QuiltedGridTile(1, 2),
             ],
           ),
           itemBuilder: (context ,index){

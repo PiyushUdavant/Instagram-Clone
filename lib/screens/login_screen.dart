@@ -1,7 +1,4 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors, unnecessary_import
-
 import'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/resources/auth_methods.dart';
 import 'package:instagram_clone/responsive/mobile_screen_layout.dart';
@@ -48,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (res == 'success'){
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) =>  ResponsiveLayout(
+          builder: (context) =>  const ResponsiveLayout(
             mobileScreenLayout: MobileScreenLayout(), 
             webScreenLayout: WebScreenLayout(),
           )
@@ -62,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void navigateToLogin() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => SignupScreen()
+        builder: (context) => const SignupScreen()
       )
     );
   }
@@ -78,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
-              Flexible(child:Container(), flex:2),
+              Flexible(flex:2, child:Container()),
               //svg image
               SvgPicture.asset('assets/ic_instagram.svg' , color:primaryColor, height:64,),
               const SizedBox(
@@ -107,12 +104,6 @@ class _LoginScreenState extends State<LoginScreen> {
               InkWell(
                 onTap:loginUser,
                 child: Container(
-                  child: _isLoading?
-                  Center(child:CircularProgressIndicator(
-                    color:primaryColor,
-                  ))
-                  :
-                  Text('Log in'),
                   alignment:Alignment.center,                
                   padding:const EdgeInsets.symmetric(vertical:12),
                   // color:blueColor,
@@ -121,7 +112,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     shape:RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(4)),
                     )
-                  ),                  
+                  ),
+                  child: _isLoading?
+                  const Center(child:CircularProgressIndicator(
+                    color:primaryColor,
+                  ))
+                  :
+                  const Text('Log in'),                  
                 ),
               ),
               const SizedBox(

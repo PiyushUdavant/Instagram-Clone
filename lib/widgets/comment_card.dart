@@ -1,11 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
-
 import'package:flutter/material.dart';
 import 'package:instagram_clone/models/user.dart';
 import 'package:instagram_clone/providers/user_provider.dart';
-import 'package:instagram_clone/resources/firestore_methods.dart';
 import 'package:instagram_clone/utils/colors.dart';
-import 'package:instagram_clone/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -22,14 +18,14 @@ class _CommentCardState extends State<CommentCard> {
   Widget build(BuildContext context) {
     final User? user = Provider.of<UserProvider>(context).getUser;
     if(user == null){
-      return Center(
+      return const Center(
         child: CircularProgressIndicator(
           color: primaryColor,
         ),
       );
     }
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 18,
         horizontal: 16,
       ),
@@ -43,7 +39,7 @@ class _CommentCardState extends State<CommentCard> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.only(left: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +49,7 @@ class _CommentCardState extends State<CommentCard> {
                       children: [
                         TextSpan(
                           text: widget.snap['name'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           )
                         ),
@@ -64,13 +60,13 @@ class _CommentCardState extends State<CommentCard> {
                     )
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 4),
+                    padding: const EdgeInsets.only(top: 4),
                     child: Text(
                       // '23/12/2023',
                       DateFormat.yMMMd().format(
                         widget.snap['datePublished'].toDate(),
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
                       )
@@ -83,9 +79,9 @@ class _CommentCardState extends State<CommentCard> {
           Column(
             children: [
               IconButton(
-                icon : Icon(Icons.favorite_border , size: 20),
+                icon : const Icon(Icons.favorite_border , size: 20),
                 onPressed: () {
-                  Icon(Icons.favorite , color: Colors.red);
+                  const Icon(Icons.favorite , color: Colors.red);
                 } ,
               )
               // Container(

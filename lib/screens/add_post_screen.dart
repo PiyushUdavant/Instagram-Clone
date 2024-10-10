@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors,unused_import, prefer_const_literals_to_create_immutables 
-
 import 'dart:typed_data';
 
 import'package:flutter/material.dart';
@@ -64,7 +62,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
           title: const Text('Create a Post'),
           children:[
             SimpleDialogOption(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: const Text('Take a photo'),
               onPressed:() async{
                 Navigator.of(context).pop();
@@ -77,7 +75,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               }
             ),
             SimpleDialogOption(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: const Text('Choose from gallery'),
               onPressed:() async{
                 Navigator.of(context).pop();
@@ -90,7 +88,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               }
             ),
             SimpleDialogOption(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: const Text('Cancel'),
               onPressed:() {
                 Navigator.of(context).pop();                
@@ -122,7 +120,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
     //The below condition is required so that we can access the user.photoUrl in line no. 111 otherwise we will get 'null check operator used on a null value error' it means user is initially null and still you are using null check(!). We have also made changes in user_provider.dart line 10 and commented the old one which we thought is correct . Add this in the notes as it is a very complex error and it is very hard to identify this error.
    
     if(user==null){ 
-      return Center(                         
+      return const Center(                         
         child: CircularProgressIndicator(
           color:primaryColor,
         )
@@ -167,7 +165,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       body:Column(
         children: [
           _isLoading ?
-          LinearProgressIndicator() :
+          const LinearProgressIndicator() :
           const Padding( padding : EdgeInsets.only(top:0) ),
           const Divider(),
           Row(
@@ -181,7 +179,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 width: MediaQuery.of(context).size.width * 0.45,
                 child: TextField(
                   controller: _descriptionController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Write a caption...',
                     border: InputBorder.none,
                   ),
@@ -202,7 +200,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   )
                 )
               ),
-              Divider(),
+              const Divider(),
             ]
           )
         ]

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +76,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         body: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   Row(
@@ -123,7 +121,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     await AuthMethods().signOut();
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
-                                        builder: (context) => LoginScreen()
+                                        builder: (context) => const LoginScreen()
                                       )
                                     );
                                   }
@@ -173,21 +171,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
-                    padding: EdgeInsets.only(top:4),
+                    padding: const EdgeInsets.only(top:4),
                     child: Text(
                       userData['username'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       )
                     )
                   ),
                   Container(
-                    padding: EdgeInsets.only(top:1),
+                    padding: const EdgeInsets.only(top:1),
                     alignment: Alignment.centerLeft,
                     child: Text(
                       userData['bio'],
-                      style:TextStyle(
+                      style:const TextStyle(
                         fontSize : 16,
                       ),
                     ),
@@ -203,7 +201,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 .get(), 
               builder: (context ,snapshot){
                 if(snapshot.connectionState == ConnectionState.waiting){
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 }
@@ -211,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 return GridView.builder(
                   shrinkWrap: true,
                   itemCount: snapshot.data!.docs.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount : 3,
                     crossAxisSpacing : 5,
                     mainAxisSpacing : 1.5,
@@ -244,16 +242,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
       children: [
         Text(
           num.toString(),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 22 ,
             fontWeight: FontWeight.bold,
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 4),
+          margin: const EdgeInsets.only(top: 4),
           child: Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w400,
               color: Colors.grey,
